@@ -1,0 +1,164 @@
+B(4) Diabetes Prediction using KNN Algorithm
+1. Aim
+To implement the K-Nearest Neighbors (KNN) algorithm on the diabetes.csv dataset and calculate the confusion matrix, accuracy, error rate, precision and recall.
+2. Theory
+What is KNN?
+
+K-Nearest Neighbors (KNN) is a supervised machine learning algorithm used for classification.
+
+It predicts the class of a new data point by checking its nearest neighboring data points.
+
+In this practical, we predict whether a person has diabetes or not.
+Outcome	Meaning
+0	No Diabetes
+1	Diabetes
+
+3. Python Code
+First, keep diabetes.csv in the same folder as your Python program.
+# Diabetes Prediction using KNNimport pandas as pdfrom sklearn.model_selection import train_test_splitfrom sklearn.preprocessing import StandardScalerfrom sklearn.neighbors import KNeighborsClassifierfrom sklearn.metrics import (    confusion_matrix,    accuracy_score,    precision_score,    recall_score)# Load datasetdata = pd.read_csv("diabetes.csv")# Separate input and outputX = data.drop("Outcome", axis=1)y = data["Outcome"]# Split datasetX_train, X_test, y_train, y_test = train_test_split(    X, y, test_size=0.2, random_state=42)# Feature scalingscaler = StandardScaler()X_train = scaler.fit_transform(X_train)
+
+
+
+4. Expected Output
+For the commonly used Pima Indians Diabetes dataset with an 80:20 split, output will look like this (your exact values may differ):
+Confusion Matrix:
+[[some values]
+ [some values]]
+
+Accuracy: Depends on dataset split
+Error Rate: Depends on dataset split
+Precision: Depends on predictions
+Recall: Depends on predictions
+
+
+The actual numbers are calculated automatically when you run the program.
+5. Understanding Confusion Matrix
+The confusion matrix checks how correctly our model predicts diabetes.
+\[
+\begin{bmatrix}TN & FP\\FN & TP\end{bmatrix}
+\]
+
+Term	Meaning
+TN	Correctly predicted No Diabetes
+TP	Correctly predicted Diabetes
+FP	Predicted Diabetes, but actually No Diabetes
+FN	Predicted No Diabetes, but actually Diabetes
+
+6. Important Performance Metrics
+1. Accuracy
+
+Percentage of total correct predictions.
+\[
+Accuracy = \frac{TP+TN}{TP+TN+FP+FN}
+\]
+
+2. Error Rate
+
+Percentage of incorrect predictions.
+\[
+Error = 1 - Accuracy
+\]
+
+3. Precision
+
+Out of all predicted diabetes cases, how many were actually diabetic?
+\[
+Precision = \frac{TP}{TP+FP}
+\]
+
+4. Recall
+
+Out of all actual diabetes cases, how many were correctly identified?
+\[
+Recall = \frac{TP}{TP+FN}
+\]
+
+7. Understanding KNN
+
+
+
+Class AClass BPredictionClass A
+
+
+
+
+k = 5: Class A wins 3–2; the point is Class A.
+
+\(k\)
+
+
+
+
+
+
+
+
+
+
+Give feedback
+
+For example, if K = 5:
+- 3 neighbors have diabetes.
+- 2 neighbors do not have diabetes.
+- The new patient is classified as diabetic.
+8. Important Python Functions
+Function	Purpose
+pd.read_csv()	Loads CSV dataset
+train_test_split()	Splits dataset
+StandardScaler()	Scales features
+KNeighborsClassifier()	Creates KNN model
+fit()	Trains model
+predict()	Predicts output
+confusion_matrix()	Creates confusion matrix
+accuracy_score()	Calculates accuracy
+precision_score()	Calculates precision
+recall_score()	Calculates recall
+
+9. Viva Questions and Answers
+Q1. What is KNN?
+
+KNN stands for K-Nearest Neighbors. It predicts a class based on nearby data points.
+
+Q2. What is diabetes prediction?
+
+It predicts whether a person has diabetes based on medical information.
+
+Q3. What is Outcome in diabetes.csv?
+
+Outcome is the target column. 0 means No Diabetes and 1 means Diabetes.
+
+Q4. What is K in KNN?
+
+K represents the number of nearest neighbors considered for prediction.
+
+Q5. Why do we use StandardScaler?
+
+To bring all input features to a similar scale.
+
+Q6. What is a confusion matrix?
+
+It is a table used to evaluate classification predictions.
+
+Q7. What is precision?
+
+Correct positive predictions divided by all positive predictions.
+
+Q8. What is recall?
+
+Correctly identified positive cases divided by all actual positive cases.
+
+Q9. What is error rate?
+
+The percentage of incorrect predictions.
+
+Q10. Why do we use train-test split?
+
+To train the model on one part of the data and test it on unseen data.
+
+Practical exam shortcut
+Remember these five lines:
+knn = KNeighborsClassifier(n_neighbors=5)knn.fit(X_train, y_train)y_pred = knn.predict(X_test)print(confusion_matrix(y_test, y_pred))print(accuracy_score(y_test, y_pred))
+
+
+
+Conclusion: Thus, the KNN algorithm was implemented successfully on the diabetes dataset, and its performance was evaluated using confusion matrix, accuracy, error rate, precision and recall.

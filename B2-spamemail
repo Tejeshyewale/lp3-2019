@@ -1,0 +1,138 @@
+B(2) Email Spam Detection using Binary Classification
+1. Aim
+To classify emails into two categories (Spam and Not Spam) using K-Nearest Neighbors (KNN) and Support Vector Machine (SVM), and compare their performance.
+2. Theory
+What is binary classification?
+
+Binary classification is a machine learning technique used to classify data into two categories.
+
+In our practical:
+Class	Meaning
+0	Normal Email (Not Spam)
+1	Abnormal Email (Spam)
+
+Example:
+- "Hello, how are you?" → Not Spam
+- "Congratulations! You won a free prize" → Spam
+3. Python Program
+This is a simple program using a small sample email dataset. It uses TF-IDF to convert email text into numbers.
+# Email Spam Detection using KNN and SVMimport pandas as pdfrom sklearn.model_selection import train_test_splitfrom sklearn.feature_extraction.text import TfidfVectorizerfrom sklearn.neighbors import KNeighborsClassifierfrom sklearn.svm import SVCfrom sklearn.metrics import accuracy_score, classification_report# Sample datasetdata = {    'email': [        'Hello how are you',        'Meeting is scheduled today',        'Please submit your assignment',        'Let us meet tomorrow',        'Congratulations you won a prize',        'Win free money now',        'Claim your free gift',        'You won a lottery',        'Get free cash now',        'Click here to win money'
+
+
+
+4. Expected Output
+The exact accuracy depends on the train-test split and dataset.
+KNN Accuracy: 1.0
+SVM Accuracy: 1.0
+
+KNN Classification Report:
+              precision    recall  f1-score
+0                1.00       1.00      1.00
+1                1.00       1.00      1.00
+
+SVM Classification Report:
+              precision    recall  f1-score
+0                1.00       1.00      1.00
+1                1.00       1.00      1.00
+
+New Email Prediction:
+KNN: Spam
+SVM: Spam
+
+
+Note: This is an illustrative output. Actual results may differ.
+5. Understanding Both Algorithms
+A. K-Nearest Neighbors (KNN)
+KNN classifies an email based on its nearest neighboring emails.
+
+For example, if we select K = 3:
+
+
+
+Class AClass BPredictionClass B
+
+
+
+
+k = 3: Class B wins 2–1; the point is Class B.
+
+\(k\)
+
+
+
+
+
+
+
+
+
+
+Give feedback
+
+If 2 out of 3 nearest emails are Spam, the new email is classified as Spam.
+B. Support Vector Machine (SVM)
+SVM finds the best separating boundary (hyperplane) between two classes.
+
+
+
+
+
+
+
+
+akkio.com
+
+
+- One side: Spam emails.
+- Other side: Not Spam emails.
+- The boundary separates the two categories.
+6. Performance Comparison
+Parameter	KNN	SVM
+Full form	K-Nearest Neighbors	Support Vector Machine
+Learning type	Supervised	Supervised
+Method	Nearest neighbors	Separating boundary
+Training	Simple	Finds optimal boundary
+Prediction	Can be slower on large datasets	Generally efficient
+Main parameter	K value	Kernel
+
+Conclusion: Both algorithms can classify spam emails. SVM often performs well on high-dimensional text data, while KNN is easy to understand and implement. Actual performance depends on the dataset.
+7. Viva Questions and Answers
+Q1. What is spam detection?
+
+Spam detection is the process of identifying unwanted or fake emails.
+
+Q2. What is binary classification?
+
+Classification into two categories.
+
+Q3. What is KNN?
+
+KNN stands for K-Nearest Neighbors. It classifies data using its nearest neighbors.
+
+Q4. What is SVM?
+
+SVM stands for Support Vector Machine. It separates different classes using a decision boundary.
+
+Q5. What is TF-IDF?
+
+TF-IDF converts text into numerical values based on the importance of words.
+
+Q6. What is training data?
+
+Data used to train a machine learning model.
+
+Q7. What is testing data?
+
+Data used to check model performance.
+
+Q8. What is accuracy?
+
+Accuracy measures how many predictions are correct.
+
+Q9. What is a kernel in SVM?
+
+A kernel helps SVM classify data when the separation is not straightforward.
+
+Q10. Which algorithm is better for spam detection?
+
+SVM often works well for text classification, but the better algorithm depends on the dataset.

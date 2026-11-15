@@ -1,0 +1,123 @@
+Mini Project – Titanic Survival Prediction using Machine Learning
+1. Aim
+To build a machine learning model that predicts whether a passenger survived the Titanic shipwreck based on passenger details such as age, gender, passenger class, fare and other information.
+2. Theory
+What is Titanic Survival Prediction?
+
+It is a supervised machine learning classification problem.
+
+The model learns from historical Titanic passenger data and predicts whether a passenger survived or not.
+Output	Meaning
+0	Did not survive
+1	Survived
+
+Example:
+- Female passenger, age 25, first class → Model predicts survival.
+- Male passenger, age 40, third class → Model predicts survival or non-survival based on learned patterns.
+3. Dataset
+We use the Titanic-Dataset.csv file.
+
+Important columns:
+Column	Description
+PassengerId	Passenger ID
+Name	Passenger name
+Sex	Male or Female
+Age	Passenger age
+Pclass	Passenger class
+SibSp	Siblings/spouses aboard
+Parch	Parents/children aboard
+Fare	Ticket fare
+Embarked	Boarding location
+Survived	Target column
+
+4. Python Code
+Required libraries:
+pip install pandas numpy scikit-learn
+
+
+Keep Titanic-Dataset.csv in the same folder as your Python program.
+
+Expected Output
+Accuracy: Depends on dataset split
+
+Confusion Matrix:
+[[TN FP]
+ [FN TP]]
+
+Passenger Survived
+
+
+Actual accuracy depends on your dataset and training/testing split.
+6. How the Model Works
+
+
+
+
+
+
+
+
+decodeai.in
+
+
+The process:
+1. Load Titanic passenger dataset.
+2. Clean missing values.
+3. Convert categorical data into numbers.
+4. Split the dataset into training and testing data.
+5. Train the Decision Tree model.
+6. Predict passenger survival.
+7. Calculate accuracy and confusion matrix.
+7. Important Machine Learning Concepts
+Concept	Meaning
+Classification	Predicting categories
+Decision Tree	Model that makes decisions using conditions
+Label Encoding	Converting text into numbers
+Missing Values	Empty values in the dataset
+Training	Teaching the model
+Testing	Checking model performance
+Accuracy	Percentage of correct predictions
+
+8. Viva Questions and Answers
+Q1. What is Titanic Survival Prediction?
+
+It is a machine learning project that predicts whether a passenger survived the Titanic accident.
+
+Q2. Which type of machine learning is used?
+
+Supervised learning.
+
+Q3. Is it classification or regression?
+
+Classification because the output has two classes: 0 and 1.
+
+Q4. What is a Decision Tree?
+
+A Decision Tree is a machine learning algorithm that makes predictions using a tree-like structure of conditions.
+
+Q5. What is the target variable?
+
+Survived.
+
+Q6. What does Pclass mean?
+
+Passenger class: 1st, 2nd or 3rd class.
+
+Q7. Why do we handle missing values?
+
+Because missing data can affect model training and predictions.
+
+Q8. Why do we use Label Encoding?
+
+To convert categorical text values into numerical values.
+
+Q9. What is overfitting?
+
+When a model performs well on training data but poorly on unseen data.
+
+Q10. Which features affect survival?
+
+Gender, age, passenger class, fare and family information can influence predictions.
+
+9. Conclusion
+Thus, a machine learning model was successfully developed using the Titanic passenger dataset to predict passenger survival based on passenger information. The model's performance was evaluated using accuracy and a confusion matrix.
